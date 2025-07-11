@@ -33,7 +33,7 @@ def load_and_merge_model(checkpoint_path="GRPO/checkpoint-1000"):
     
     return merged_model, tokenizer
 
-def generate_response_merged(model, tokenizer, prompt, max_new_tokens=50, temperature=0.7):
+def generate_response_merged(model, tokenizer, prompt, max_new_tokens=50, temperature=0.01):
     """Generate response with merged model."""
     model.eval()
     
@@ -78,7 +78,16 @@ def compare_base_vs_merged():
     print("\nLoading merged model...")
     merged_model, _ = load_and_merge_model()
     
-    test_prompt = "Write a short summary of machine learning:"
+    test_prompt = """SUBREDDIT: r/tifu
+
+TITLE: TIFU by accidentally drinking soap.
+
+POST: Ok so I was washing my hands to take my contact lenses out. As anyone with contacts with tell you, you wash with soap prior to prevent infection.
+
+Anyway, I press down on the soap and liquid cleanliness pours onto my hands. I do my thing and dispose of the lenses. Next I fill my pink ice-age cup up with water to drink from. I lift it up and notice a strange smell, like lavender... Nevertheless, I swallow my water and realize I've made a huge mistake. A huge glob of liquid cleanliness flew into the cup and mixed with the water to become an incognito concoction of lavender and H2O. It took several swigs of mouthwash to not be a soapy-breathing-dragon.
+
+TL;DR:
+    """
     
     print(f"\n{'='*60}")
     print("COMPARISON: Base vs Merged Model")
