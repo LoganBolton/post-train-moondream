@@ -1,0 +1,16 @@
+[project]
+name = "post-train-moondream"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "accelerate>=1.8.1",
+    "einops>=0.8.1",
+    "pillow>=11.3.0",
+    "pyvips>=3.0.0",
+    "pyvips-binary>=8.17.1",
+    "torch>=2.7.1",
+    "transformers>=4.53.1",
+    "matplotlib>=3.8.0",
+]
